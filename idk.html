@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    details.collapsible {
+      background: linear-gradient(to right, #39FF14, #00BB77);
+      border-radius: 10px;
+      color: #000;
+      padding: 10px 15px;
+      margin: 20px auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: background 0.4s ease, transform 0.3s ease;
+      width: fit-content;
+      max-width: 90%;
+    }
+
+    details.collapsible[open] {
+      background: linear-gradient(to right, #39FF14, #00BB77);
+      transform: scale(1.02);
+      transition: ease;
+    }
+
+    details.collapsible summary {
+      cursor: pointer;
+      font-size: 1.2em;
+      font-weight: bold;
+      outline: none;
+      color: #000;
+      text-align: center;
+    }
+
+    /*a{
+      color: #2FEF10;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    a:hover {
+      transform: scale(1.08);
+      box-shadow: 0px 0px 8px rgba(47, 239, 16, 0.5);
+    }
+    */
+    @media (max-width: 600px) {
+      .profile-img {
+        max-width: 150px;
+      }
+
+      details.collapsible summary {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="#home">Home/Início</a></li>
+        <li><a href="#contact">Contact/Contato</a></li>
+        <li><a href="#about">About/Sobre</a></li>
+        <li><a href="#rojects">Projects</a></li>
+        <li><a href="#course">Course/Curso</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <details class="collapsible">
+        <summary>About me</summary>
+        
+      </details>
+    </section>
+
+    <article>
+      <h2>My Projects</h2>
+      <p>Details about projects...</p>
+    </article>
+
+    <aside>
+      <h3>Languages I speak</h3>
+      <p>English, Japanese (current learning, on begginer stage), Portuguese</p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© 2025 Gustavo</p>
+  </footer>
+</body>
+
+</html>
