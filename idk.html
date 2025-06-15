@@ -1,96 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio</title>
   <style>
-    details.collapsible {
-      background: linear-gradient(to right, #39FF14, #00BB77);
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .wrapper {
+      margin: 5px;
+      position: relative;
+      z-index: 1;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .navbar {
+      background-color: #0B1215;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: calc(100% - 10px);
+      margin: 5px;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      padding: 10px 0;
       border-radius: 10px;
-      color: #000;
-      padding: 10px 15px;
-      margin: 20px auto;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      transition: background 0.4s ease, transform 0.3s ease;
-      width: fit-content;
-      max-width: 90%;
     }
 
-    details.collapsible[open] {
-      background: linear-gradient(to right, #39FF14, #00BB77);
-      transform: scale(1.02);
-      transition: ease;
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
     }
 
-    details.collapsible summary {
-      cursor: pointer;
-      font-size: 1.2em;
-      font-weight: bold;
-      outline: none;
-      color: #000;
-      text-align: center;
-    }
-
-    /*a{
+    .nav-links li a {
       color: #2FEF10;
       text-decoration: none;
-      display: inline-block;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
     }
 
-    a:hover {
-      transform: scale(1.08);
-      box-shadow: 0px 0px 8px rgba(47, 239, 16, 0.5);
+    .nav-links li a:hover {
+      color: white;
     }
-    */
-    @media (max-width: 600px) {
-      .profile-img {
-        max-width: 150px;
-      }
 
-      details.collapsible summary {
-        font-size: 1em;
-      }
+    .tittle {
+      display: flex;
+      justify-content: center;
+      padding-top: 70px;
+      font-size: 2rem;
+      color: white;
+    }
+
+    main {
+      padding-top: 130px;
+      color: #fff;
+    }
+
+    section, article, aside {
+      margin-bottom: 30px;
+    }
+
+    footer {
+      text-align: center;
+      color: white;
+      margin-top: 40px;
+    }
+
+    body {
+      background-color: #000;
+      color: #2FEF10;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>My Portfolio</h1>
-    <nav class="navbar">
-      <ul class="nav-links">
-        <li><a href="#home">Home/Início</a></li>
-        <li><a href="#contact">Contact/Contato</a></li>
-        <li><a href="#about">About/Sobre</a></li>
-        <li><a href="#rojects">Projects</a></li>
-        <li><a href="#course">Course/Curso</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div id="particles-js"></div>
+  <div class="wrapper">
+    <header>
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="#home">Home/Início</a></li>
+          <li><a href="#contact">Contact/Contato</a></li>
+          <li><a href="#about">About/Sobre</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#course">Course/Curso</a></li>
+        </ul>
+      </nav>
+      <h1 class="tittle">My Portfolio</h1>
+    </header>
 
-  <main>
-    <section>
-      <details class="collapsible">
-        <summary>About me</summary>
-        
-      </details>
-    </section>
+    <main>
+      <section id="about">
+        <h2>About me:</h2>
+        <p>My name is Gustavo, I'm 16 years old, I'm from Brazil, I'm currently taking a full-stack course at Senac (Serviço Nacional de Aprendizagem Comercial, or National Service of Commercial Learning).</p>
+      </section>
 
-    <article>
-      <h2>My Projects</h2>
-      <p>Details about projects...</p>
-    </article>
+      <article id="projects">
+        <h2>My Projects</h2>
+        <p>Details about projects...</p>
+      </article>
 
-    <aside>
-      <h3>Languages I speak</h3>
-      <p>English, Japanese (current learning, on begginer stage), Portuguese</p>
-    </aside>
-  </main>
+      <aside>
+        <h3>Languages I speak</h3>
+        <p>English (fluent), Japanese (beginner), Portuguese (native)</p>
+      </aside>
+    </main>
 
-  <footer>
-    <p>© 2025 Gustavo</p>
-  </footer>
+    <footer>
+      <p>© 2025 Gustavo</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 100 },
+      color: { value: "#000" },
+      shape: { type: "square" },
+      opacity: { value: 1.0 },
+      size: { value: 4 },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#39FF14",  
+        opacity: 1.0,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 1.5
+      }
+    }
+  });
+</script>
+
 </body>
-
 </html>
